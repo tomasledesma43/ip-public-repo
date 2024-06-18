@@ -18,9 +18,13 @@ def getAllImages(input=None):
 
     return images
 
-
+#filtra las imagenes de la API en base a lo que llega por parametro y mapea c/u de ellas como una NasaCard y las devuelve
 def getImagesBySearchInputLike(input):
-    return getAllImages(input)
+    json_collection = transport.getAllImages(input)
+    images = []
+    for objeto in json_collection:
+        images.append(mapper.fromRequestIntoNASACard(objeto))
+    return images
 
 
 # añadir favoritos (usado desde el template 'home.html')
