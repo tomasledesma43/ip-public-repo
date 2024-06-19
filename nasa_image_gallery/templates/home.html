@@ -17,8 +17,8 @@
             <div class="card shadow ">
                 <img src="{{ imagen.image_url}}" class="card-img-top" alt="imagen">
                 <div class="card-body">
-                    <h5 class="card-title">{{ imagen.title}}</h5>
-                    <p class="card-text">{{ imagen.description}}</p>
+                    <h5 class="card-title text-info">{{ imagen.title}}</h5>
+                    <p class="card-text ">{{ imagen.description}}</p>
                 </div>
                 {% if request.user.is_authenticated %}
                 <div class="card-footer text-center">
